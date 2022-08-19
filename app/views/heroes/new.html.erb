@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to heroes"), heroes_path %>
+
+  <div class="header">
+    <h1>New hero</h1>
+  </div>
+
+  <%= render "form", hero: @hero %>
+</main>
