@@ -1,17 +1,17 @@
 en:
   simple_form:
     placeholders:
-      quote:
-        name: Name of your quote
+      hero:
+        name: Name of your hero
     labels:
-      quote:
+      hero:
         name: Name
 
   helpers:
     submit:
-      quote:
-        create: Create quote
-        update: Update quote
+      hero:
+        create: Create hero
+        update: Update hero
     "yes": 'Yes'
     "no": 'No'
     required:

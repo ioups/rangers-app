@@ -12,7 +12,7 @@ class HeroesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Heroes"
 
     click_on "New hero"
-    assert_selector "h1", text: "New Hero"
+    assert_selector "h1", text: "New hero"
 
     fill_in "Name", with: "Test Hero"
     click_on "Create hero"
@@ -29,20 +29,20 @@ class HeroesTest < ApplicationSystemTestCase
   end
 
   test 'updating a hero' do
-    visit @heroes_path
+    visit heroes_path
     assert_selector "h1", text:'Heroes'
 
     click_on "Edit", match: :first
     assert_selector "h1", text: "Edit hero"
 
-    fill_in "name", with: "Updated Hero"
+    fill_in "Name", with: "Updated Hero"
     click_on "Update hero"
 
     assert_selector "h1", text: "Heroes"
     assert_text "Updated Hero"
   end
 
-  test ' Destroying a hero' do
+  test 'Destroying a hero' do
     visit heroes_path
     assert_text @hero.name
 
