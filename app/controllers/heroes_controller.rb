@@ -18,7 +18,7 @@ class HeroesController < ApplicationController
     if @hero.save
       redirect_to heroes_path, notice: "Hero was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class HeroesController < ApplicationController
     if @hero.update(hero_params)
       redirect_to heroes_path, notice: "Hero was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
