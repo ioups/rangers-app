@@ -1,12 +1,26 @@
-<div class="quote">
-  <%= link_to hero.name, hero_path(hero) %>
-  <div class="quote__actions">
-    <%= button_to "Delete",
-                  hero_path(hero),
-                  method: :delete,
-                  class: "btn btn--light" %>
-    <%= link_to "Edit",
-                edit_hero_path(hero),
-                class: "btn btn--light" %>
+<div class="col">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <H4><%= hero.name %></H4>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to "View",
+                      hero_path(hero),
+                      class: "btn btn-sm btn-outline-primary" %>
+          <%= link_to "Edit",
+                      edit_hero_path(hero),
+                      class: "btn btn-sm btn-outline-secondary" %>
+          <%= button_to "Delete",
+                        hero_path(hero),
+                        method: :delete,
+                        class: "btn btn-sm btn-outline-danger" %>
+        </div>
+      </div>
+      <% if hero.template? %>
+        <div>
+          <small class="text-muted">Template Hero</small>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

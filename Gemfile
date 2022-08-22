@@ -47,6 +47,8 @@ gem "bootsnap", require: false
 
 gem "simple_form", "~> 5.1.0"
 
+gem 'jsbundling-rails'  # needed for bootstrap javascript
+gem 'cssbundling-rails' # Install bootstrap 5
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -1,20 +1,41 @@
 <main class="container">
-  <div class="header">
-    <h1>Heroes</h1>
-    <%= link_to "New hero",
-                new_hero_path,
-                class: "btn btn--primary" %>
-  </div>
-  <div>
-    <p> All heroes</p>
-    <%= render @heroes %>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Heroes</h1>
+        <p class="lead text-muted"> Here is the list of available heroes. You can create a new one or pick one
+        up from template heroes</p>
+        <p>
+          <%= link_to "New hero",
+                      new_hero_path,
+                      class: "btn btn-primary my-2" %>
+          <%= link_to "something else",
+                      new_hero_path,
+                      class: "btn btn-secondary my-2" %>
+        </p>
+      </div>
+    </div>
+  </section>
+  <h3> All Heroes</h3>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render @heroes %>
+      </div>
+    </div>
   </div>
 
-  <hr>
+  <br>
+  <h3> Hero Templates</h3>
 
-  <div>
-    <p> Hero Templates</p>
-    <%= render @templates %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render @templates %>
+      </div>
+    </div>
   </div>
 
 </main>
