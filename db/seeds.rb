@@ -7,3 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "\n== Seeding the database with fixtures =="
 system("bin/rails db:fixtures:load")
+
+puts "\n== Seeding the database with custom seeds =="
+
+Hero.create(name: "Seed Ranger", template: true)
+Hero.create(name: "Seed Companion", template: true)

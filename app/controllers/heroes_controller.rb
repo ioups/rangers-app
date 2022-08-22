@@ -3,6 +3,7 @@ class HeroesController < ApplicationController
 
   def index
     @heroes = Hero.all
+    @templates = Hero.template
   end
 
   def show

@@ -2,6 +2,7 @@
 
 first:
   name: Captain1st
+  template: true
 
 second:
   name: Secondman
