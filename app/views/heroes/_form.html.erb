@@ -1,10 +1,10 @@
-<%= simple_form_for hero, html: { class: "hero form" } do |f| %>
+<%= form_for hero do |f| %>
   <% if hero.errors.any? %>
     <div class="error-message">
       <%= hero.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
-
-  <%= f.input :name, input_html: { autofocus: true } %>
-  <%= f.submit class: "btn btn--secondary" %>
+  <%= f.text_field(:name)   %>
+  <%#= f.input :name, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn-secondary" %>
 <% end %>
