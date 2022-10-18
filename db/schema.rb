@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_18_154258) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_18_174741) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_154258) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "template", default: false
+    t.integer "level"
+    t.integer "experience"
+    t.integer "base_movement"
+    t.integer "base_combat"
+    t.integer "base_shoot"
+    t.integer "base_armor"
+    t.integer "base_will"
+    t.integer "base_health"
+    t.integer "recruitment_points"
+    t.boolean "first_draft", default: true
+    t.text "notes"
   end
 
   create_table "parties", force: :cascade do |t|

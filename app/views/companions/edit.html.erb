@@ -1,10 +1,9 @@
-<h1>Editing companion</h1>
+<main class="container">
+  <%= link_to sanitize("&larr; Back to companions"), companions_path %>
 
-<%= render "form", companion: @companion %>
+  <div class="header">
+    <h1>Edit companion</h1>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this companion", @companion %> |
-  <%= link_to "Back to companions", companions_path %>
-</div>
+  <%= render "form", companion: @companion %>
+</main>

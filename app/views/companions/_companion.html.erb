@@ -1,2 +1,26 @@
-<div id="<%= dom_id companion %>">
+<div class="col">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <H4><%= companion.name %></H4>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to "View",
+                      companion_path(companion),
+                      class: "btn btn-sm btn-outline-primary" %>
+          <%= link_to "Edit",
+                      edit_companion_path(companion),
+                      class: "btn btn-sm btn-outline-secondary" %>
+          <%= button_to "Delete",
+                        companion_path(companion),
+                        method: :delete,
+                        class: "btn btn-sm btn-outline-danger" %>
+        </div>
+      </div>
+      <% if companion.template? %>
+        <div>
+          <small class="text-muted">Template companion</small>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -4,6 +4,8 @@ class CompanionsController < ApplicationController
   # GET /companions or /companions.json
   def index
     @companions = Companion.all
+    @templates = Companion.template
+
   end
 
   # GET /companions/1 or /companions/1.json
@@ -26,10 +28,8 @@ class CompanionsController < ApplicationController
     respond_to do |format|
       if @companion.save
         format.html { redirect_to companion_url(@companion), notice: "Companion was successfully created." }
-        format.json { render :show, status: :created, location: @companion }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @companion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +39,8 @@ class CompanionsController < ApplicationController
     respond_to do |format|
       if @companion.update(companion_params)
         format.html { redirect_to companion_url(@companion), notice: "Companion was successfully updated." }
-        format.json { render :show, status: :ok, location: @companion }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @companion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,6 +63,6 @@ class CompanionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def companion_params
-      params.fetch(:companion, {})
+      params.require(:companion).permit(:name)
     end
 end

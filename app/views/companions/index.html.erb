@@ -1,14 +1,41 @@
-<p style="color: green"><%= notice %></p>
+<main class="container">
 
-<h1>Companions</h1>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Companions</h1>
+        <p class="lead text-muted"> Here is the list of available companions. You can create a new one or pick one
+          up from template companions</p>
+        <p>
+          <%= link_to "New companion",
+                      new_companion_path,
+                      class: "btn btn-primary my-2" %>
+          <%= link_to "something else",
+                      new_companion_path,
+                      class: "btn btn-secondary my-2" %>
+        </p>
+      </div>
+    </div>
+  </section>
+  <h3> All Heroes</h3>
 
-<div id="companions">
-  <% @companions.each do |companion| %>
-    <%= render companion %>
-    <p>
-      <%= link_to "Show this companion", companion %>
-    </p>
-  <% end %>
-</div>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render @companions %>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "New companion", new_companion_path %>
+  <br>
+  <h3> Hero Templates</h3>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render @templates %>
+      </div>
+    </div>
+  </div>
+
+</main>
