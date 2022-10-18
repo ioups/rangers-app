@@ -4,7 +4,22 @@
       <%= hero.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
-  <%= f.text_field(:name)   %>
-  <%#= f.input :name, input_html: { autofocus: true } %>
-  <%= f.submit class: "btn btn-secondary" %>
+    <div class="form-group">
+      <%= f.label(:name, ) %>
+      <%= f.text_field(:name, class: 'form-control') %>
+    </div>
+  <div class="form-group">
+    <%= f.label(:level) %>
+    <%= f.number_field(:level, class: 'form-control') %>
+  </div>
+  <div class="form-check m-1">
+    <%= f.label(:first_draft) %>
+    <%= f.check_box(:level, class: 'form-check-input') %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:notes) %>
+    <%= f.text_area(:notes, class: 'form-control') %>
+  </div>
+
+  <%= f.submit class: "btn btn-secondary mt-3" %>
 <% end %>
